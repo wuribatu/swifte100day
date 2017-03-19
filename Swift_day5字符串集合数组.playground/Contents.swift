@@ -146,6 +146,75 @@ if stringSet.contains("yellow") {
     print("do have item")
 }
 
+// 集合操作
+let oddDigits: Set = [1, 3, 5, 7, 9]
+let evenDigits: Set = [0, 2, 4, 6, 8]
+let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
+
+// 根据两个集合的值创建一个新的集合
+oddDigits.union(evenDigits).sorted()
+
+// 根据两个集合中都包含的值创建的一个新的集合
+oddDigits.intersection(evenDigits).sorted()
+
+// 根据不在该集合中的值创建一个新的集合
+oddDigits.subtracting(singleDigitPrimeNumbers).sorted()
+
+// 根据在一个集合中但不在两个集合中的值创建一个新的集合
+oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
+
+let houseAnimals: Set = ["?", "?"]
+let farmAnimals: Set = ["?", "?", "?", "?", "?"]
+let cityAnimals: Set = ["?", "?"]
+
+// 判断一个集合中的值是否也被包含在另外一个集合中
+houseAnimals.isSubset(of: farmAnimals)
+
+// 一个集合中包含另一个集合所有的值
+houseAnimals.isSuperset(of: farmAnimals)
+
+// 是否没有交集
+houseAnimals.isDisjoint(with: cityAnimals)
+
+// 字典
+var dictionary1: [Int : String] = [:]
+dictionary1[16] = "sixteen"
+print(dictionary1)
+dictionary1 = [1 : "one",
+               2 : "two",
+               3 : "three"]
+print(dictionary1)
+
+dictionary1[5] = "four"
+print(dictionary1)
+
+// 返回旧值
+if let item = dictionary1.updateValue("five", forKey: 5) {
+    print(item)
+}
+
+if let item = dictionary1[5] {
+    print(item)
+}
+
+dictionary1[5] = nil
+print(dictionary1)
+if let item = dictionary1.removeValue(forKey: 3) {
+    print(item)
+}
+
+for (key, value) in dictionary1 {
+    print("\(key) is value \(value)")
+}
+
+if dictionary1.values.contains("one") {
+    print("contains")
+}
+
+
+
+
+
 
 
 
